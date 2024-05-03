@@ -19,7 +19,7 @@ library(countdown)
 :::{.r-fit-text}
 Materiais do Workshop encontram-se em:
 
-[https://github.com/lgsilvaesilva/shiny101](https://github.com/lgsilvaesilva/shiny101)
+[lgsilvaesilva/shiny101](https://github.com/lgsilvaesilva/shiny101)
 :::
 
 ## {data-menu-item="Workshop Goals"}
