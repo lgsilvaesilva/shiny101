@@ -1,0 +1,886 @@
+---
+title: "Bem-vindo ao Shiny World?"
+format: qmdrslides-revealjs
+---
+
+```{r}
+#| echo: false
+library(countdown)
+```
+
+# Sobre o Workshop
+
+## {data-menu-title="Website Link" style="text-align: center"}
+
+\
+\
+\
+
+:::{.r-fit-text}
+Materiais do Workshop encontram-se em:
+
+[lgsilvaesilva.github.io/shiny101](lgsilvaesilva/shiny101)
+:::
+
+## {data-menu-item="Workshop Goals"}
+
+\
+\
+
+### Objetivos do Workshop {style="font-size: 2.5em; text-align: center"}
+
+:::{.incremental style="font-size: 1.5em"}
+1. Cada um de vocês desenvolva o seu próprio aplicativo 
+
+2. Aprender um com os outros
+
+3. Construir um entendimento geral do Shiny
+:::
+
+## From R code to Apps
+
+![](images/img-r-to-shiny.webp){fig-alt="the widescreen image showing the transformation of an R script into an R Shiny application, now featuring data visualizations like bar charts and scatter plots on the completed app side. The builders, resembling cheerful Lego toys, are vividly bringing the code to life with colorful visual representations." width="1100px" fig-align="center"}
+
+## Fluxo do Workshop
+
+:::{.r-stretch layout="[2, 2]" style="text-align: center"}
+![](images/slide-normal.webp){width=540 .drop .fragment}
+
+![](images/slide-discussion.webp){width=540 .drop .fragment}
+
+![](images/slide-our-turn.webp){width=540 .drop .fragment}
+
+![](images/slide-your-turn.webp){width=540 .drop .fragment}
+:::
+
+# Porquê Shiny?
+
+. . .
+[Sit back and enjoy the tour!]{.bigadage}
+
+## O que nós estatísticos entregamos? 
+
+::: incremental
+- Qual o produto de um estatístico?
+  -   Análise de dados? Modelos estocásticos? Previsão? Recomendação? 
+- Como os resulados/produtos são apresentados e disponibilizados?
+  -   Relatórios (PDF, Word)
+  -   Lista de tabelas e gráficos
+  -   Planilhas (Excel)
+  -   Apresentações (Power point)
+:::
+
+## Produtos tradicionais
+
+:::{.r-stretch layout="[2, 2]" style="text-align: center"}
+![Relatórios](images/old-stats-report.webp){width=540 .drop .fragment}
+
+![Planilhas](images/img-report-excel-bad.webp){width=540 .drop .fragment}
+
+![Apresentações](images/img-report-powerpoint-bad.webp){width=540 .drop .fragment}
+
+![Lista de arquivos](images/img-report-files.webp){width=540 .drop .fragment}
+:::
+
+## Produtos tradicionais
+
+![](images/img-boring-report.webp){fig-alt="image depicting a whimsical scene in a meeting room, where a builder resembling cheerful Lego toys is presenting a boring report. The other members, also depicted as Lego-like figures, are humorously portrayed with their heads down on the table, appearing to sleep due to the dullness of the presentation." width="1100px" fig-align="center"}
+
+## E se?
+
+
+
+```{=html}
+<iframe width="100%" height="88%" src="https://voronoys.shinyapps.io/fairsplit/" title="Fair Split"></iframe>
+```
+<!-- ![https://voronoys.shinyapps.io/fairsplit/](images/ex-shiny-fairsplit-01.png){.drop} -->
+
+## E se?
+
+```{=html}
+<iframe width="100%" height="88%" src="https://lgsilvaesilva.shinyapps.io/irtapp/" title="IRT App"></iframe>
+```
+<!-- ![](images/shiny-tri.png){.drop} -->
+
+## E se?
+
+```{=html}
+<iframe width="100%" height="88%" src="https://voronoys.shinyapps.io/voronoys/" title="Voronoys App"></iframe>
+```
+
+## E se?
+
+```{=html}
+<iframe width="100%" height="88%" src="https://lgsilvaesilva.shinyapps.io/biodiversity2/" title="Biodiversity App"></iframe>
+```
+
+
+## E se?
+
+```{=html}
+<iframe width="100%" height="88%" src="https://voronoys.shinyapps.io/barchartraceR2D3/" title="barchartraceR2D3 App"></iframe>
+```
+
+
+## E se?
+
+![](images/shiny-programasus.png){.drop fig-align="center"}
+
+
+## E se?
+
+![](images/shiny-ars.png){.drop fig-align="center"}
+
+## E se?
+
+![](images/shiny-em.png){.drop fig-align="center"}
+
+## {data-menu-title="Website Link" style="text-align: center"}
+
+:::{.r-fit-text}
+Encontre mais exemplos em:
+
+[https://shiny.posit.co/r/gallery/](https://shiny.posit.co/r/gallery/)
+
+:::
+
+# Conceitos básicos
+
+## Pacote Shiny   
+
+::: {.callout-tip}
+## R Shiny
+
+-   R Shiny = R + Web
+-   Shiny é um pacote de [código aberto]{.meta-el} desenvolvido pelo desenvolvedor de software [Winston Chang](https://rstudio.github.io/shiny/authors.html) na empresa Posit (RStudio).
+-   Facilita a criação de aplicações Web, tais como análises estatísticas e visualiazações diretament do R.
+-   [Não é necessário]{.meta-el} conhecimento em HTML, css, JavaScript.
+-   Para customizações mais avançadas, o pacote shiny  permite a [interação com outras linguagens]{.meta-el}.
+:::
+
+![](images/shiny-logo.png){fig-align="center"}
+
+## Mas o que é um aplicatico Shiny?
+
+::: {.callout-tip}
+## Shiny app
+
+-   Shiny app é uma página web ([UI - _User interface_]{.meta-el}) conectada a um computador/server que esteja rodando uma sessão `R` ([Server]{.meta-el}).
+-   Os usuários interagem com a interface web ([UI]{.meta-el}) que envia comandos `R` e então retornam os resultados para o usuário através da ([UI]{.meta-el}).
+:::
+
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+![](images/r-shiny.png){fig-align="center"}
+:::
+
+::: {.fragment}
+![](images/r-shiny-cloud.png){fig-align="center"}
+:::
+::: 
+
+## Objetos `ui` e `server`
+
+:::columns
+:::{.column width="50%"}
+::: {.callout-tip icon=false}
+## `ui`
+
+-  funções escritas em R}para construir a interface em HTML que será exibida para o usuário.
+\
+\
+
+```r
+ui <- fluidPage()
+```
+:::
+:::
+:::{.column width="50%"}
+::: {.callout-tip icon=false}
+## `server`
+
+-   função que irá modificar e apresentar os objetos `R` na `UI`. Pense neste objeto como o ``motor'' do aplicativo.
+
+```r
+server <- function(input, output) {}
+```
+:::
+:::
+:::
+
+. . .
+
+```r
+library(shiny)
+ui <- fluidPage("Olá, mundo!")
+server <- function(input, output){}
+shinyApp(ui = ui, server = server)
+```
+
+. . .
+
+-   `shinyApp` combina os objetos `ui` e `server` e constrói o applicativo.
+-   Experimente rodar o código apresentado acima.
+
+## Objetos `ui` e `server`
+
+:::columns
+:::{.column width="50%" style="font-size: .55em"}
+\
+\
+
+```r
+library(shiny)
+ui <- fluidPage("Olá, mundo!")
+server <- function(input, output){}
+shinyApp(ui = ui, server = server)
+```
+![](images/img-ola-mundo.png){height=500 fig-align="center"}
+:::
+:::{.column width="50%" style="font-size: .65em"}
+
+1. Carrega o pacore shiny com `library(shiny)`
+
+2. Define a interface do usuário, a página HTML com a qual os usuários interagem. Neste caso, é uma página que contém as palavras "Olá, mundo!".
+
+3. Especifica o comportamento do nosso aplicativo definindo a função `server`. Atualmente está vazia, então nosso aplicativo não faz nada, mas voltaremos a revisitar isso em breve.
+
+4. Executa `shinyApp(ui, server)` para construir e iniciar uma aplicação Shiny a partir da UI e do servidor.
+:::
+:::
+
+## Objetos `ui` e `server`
+
+- Em geral os objetos `ui` e `server` são criados em arquivos separados: [ui.R]{.meta-el} e [server.R]{.meta-el}
+- A maneira mais comum de criar am aplicativo shiny é criando um diretório da seguinte forma:
+  - {{< fa solid folder-open size=1x >}} app-name: diretório com o nome do app.
+    - {{< fa solid file size=1x >}} ui.R: arquivo com as funções de interface
+    - {{< fa solid file size=1x >}} server.R: arquivos com as funções de operações da interface.
+    - {{< fa solid folder-open size=1x >}} www: diretório com \funR{css} e imagens que serão compartilhados com o browser.
+
+## Sua  vez  {.your-turn style="font-size: .6em"}
+
+Abra o arquivo `01-ola-mundo.R` no RStudio e...
+
+1. Substitua seu [`ui`]{.meta-el} por:
+```r
+ui <- fluidPage(
+  selectInput("dataset", label = "Dataset", choices = ls("package:datasets")),
+  verbatimTextOutput("summary"),
+  tableOutput("table")
+)
+```
+2. Execute o applicativo e veja o resultado
+3. Faça o mesmo com o objeto [`server`]{.meta-el}
+```r
+server <- function(input, output, session) {
+  output$summary <- renderPrint({
+    dataset <- get(input$dataset, "package:datasets")
+    summary(dataset)
+  })
+  
+  output$table <- renderTable({
+    dataset <- get(input$dataset, "package:datasets")
+    dataset
+  })
+}
+```
+4. Execute o applicativo novamente e veja o resultado
+5. Salve o script R com o nome [`app.R`]{.meta-el}
+
+
+```{r}
+countdown::countdown(10)
+```
+
+
+# {background-image="images/img-first-app.webp" background-size="contain"}
+
+## Sua  vez - Explicado {.your-turn style="font-size: .5em"}
+
+:::columns
+:::{.column width="50%"}
+```{.r code-line-numbers="2|3|4"}
+ui <- fluidPage(
+  selectInput("dataset", label = "Dataset", choices = ls("package:datasets")),
+  verbatimTextOutput("summary"),
+  tableOutput("table")
+)
+```
+
+-   `fluidPage()` é uma função de layout que estabelece uma estrutura visual básica da página. 
+-   `selectInput()` é um controle de entrada (_input_) que permite ao usuário interagir com o aplicativo fornecendo um valor. Neste caso, é uma caixa de seleção com o _label_ "Conjunto de Dados" e permite escolher um dos conjuntos de dados integrados que acompanham o R. 
+-   `verbatimTextOutput()` e `tableOutput()` são controles de saída (_output_) que indicam ao Shiny onde colocar a saída renderizada (entraremos em como fazer isso em um momento). verbatimTextOutput() exibe código e tableOutput() exibe tabelas. 
+
+:::
+:::{.column width="50%"}
+
+```{.r code-line-numbers="2|7"}
+server <- function(input, output, session) {
+  output$summary <- renderPrint({
+    dataset <- get(input$dataset, "package:datasets")
+    summary(dataset)
+  })
+  
+  output$table <- renderTable({
+    dataset <- get(input$dataset, "package:datasets")
+    dataset
+  })
+}
+```
+-   O lado esquerdo do operador de atribuição (<-), output$ID, indica que você está fornecendo a receita para a saída do Shiny com aquele ID. 
+
+-   O lado direito da atribuição usa uma função de renderização específica para envolver algum código que você fornece. 
+-   Cada função render{TIPO} é projetada para produzir um tipo específico de saída (por exemplo, texto, tabelas e gráficos), e geralmente é emparelhada com uma função {tipo}Output. 
+
+-   Por exemplo, neste aplicativo, [renderPrint()]{.meta-el} é emparelhado com [verbatimTextOutput()]{.meta-el} para exibir um resumo estatístico com texto de largura fixa (verbatim), e [renderTable()]{.inline-el} é emparelhado com [tableOutput()]{.inline-el} para mostrar os dados de entrada em uma tabela.
+:::
+:::
+
+# Inputs e Outputs
+
+## Entendendo os [inputs]{style="color:#67BF5C;"} e [outputs]{style="color:#ED665D;"}
+
+![](images/input-output.png){fig-align="center"}
+
+## ui.R: [inputs]{style="color:#67BF5C;"} e [outputs]{style="color:#ED665D;"}
+
+```r
+ui <- fluidPage(
+  # inputs(): funções de input,
+  # outputs(): funções de output
+)
+```
+
+## ui.R: [inputs]{style="color:#67BF5C;"} e [outputs]{style="color:#ED665D;"}
+
+-   Criando um botão de [input]{style="color:#67BF5C;"} com uma das funções de [inputs()]{style="color:#67BF5C;"}.
+
+```{.r style="font-size: .6em"}
+sliderInput(inputId = "nume",            # identificador do butao (input)
+            label = "Escolha um valor",  # texto que irá aparecer na interface
+            min = 0,                     # valor mínimo que o botão aceita
+            max = 100,                   # valor máximo que o botão aceita
+            value = 50,                  # valor padrão inicial
+            step = 1)                    # intervalo entre cada valor
+```
+
+. . .
+
+-   Botão em HTML
+
+```{.html style="font-size: .6em"}
+<div class="form-group shiny-input-container">
+  <label class="control-label" id="nume-label" for="nume">Escolha um valor</label>
+  <input class="js-range-slider" id="nume" data-skin="shiny" data-min="0" data-max="100" data-from="50" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
+</div>
+```
+
+
+## ui.R: [inputs]{style="color:#67BF5C;"} e [outputs]{style="color:#ED665D;"}
+
+::: columns
+:::{.column width="50%" style="font-size: .65em"}
+\
+\
+\
+```r
+library(shiny)
+
+ui <- fluidPage(
+
+  
+  
+)
+
+server <- function(input, output) {}
+
+shinyApp(ui = ui, server = server)
+```
+:::
+:::{.column width="50%"}
+![](images/shiny-template01.png){fig-align="center" height=800}
+:::
+:::
+
+## ui.R: [inputs]{style="color:#67BF5C;"} e [outputs]{style="color:#ED665D;"}
+
+::: columns
+:::{.column width="50%" style="font-size: .65em"}
+\
+\
+\
+```r
+library(shiny)
+
+ui <- fluidPage(
+  sliderInput(inputId = "num", 
+    label = "Escolha um valor", 
+    value = 25, min = 1, max = 100)
+)
+
+server <- function(input, output) {}
+
+shinyApp(ui = ui, server = server)
+```
+:::
+:::{.column width="50%"}
+![](images/shiny-template02.png){fig-align="center" height=800}
+:::
+:::
+
+## ui.R: [inputs]{style="color:#67BF5C;"}
+
+![](images/botoes-input.png){fig-align="center" width=800}
+
+## Sua  vez  {.your-turn}
+
+1.  Abra o arquivo `suavez-02.R`
+
+2.  Adicione os seguintes botões:
+
+::: {.callout-note icon=false}
+## Botões
+-   radio button
+-   check button
+-   text input
+:::
+
+::: {.callout-tip icon=false}
+- Configure o `inputId`, `label`, `choices`, `selected`
+- Veja também `choiceNames` e `choiceValues`
+:::
+
+```{r}
+countdown::countdown(15)
+```
+
+## ui.R: [outputs]{style="color:#ED665D;"} {style="font-size: .65em"}
+
+- As funções abaixo tem como objetivo informar ao front-end qual o tipo de objeto será renderizado.
+\
+\
+\
+
+| Funções `output`       | Descrição                       |
+|------------------------|---------------------------------|
+| `dataTableOutput()`    | Tabela interativa               |
+| `htmlOutput()`         | HTML bruto                      |
+| `imageOutput()`        | Imagem (png, jpg, ...)          |
+| `plotOutput()`         | Gráfico R                       |
+| `tableOutput()`        | Tabela (dataframe)              |
+| `textOutput()`         | Texto                           |
+| `uiOutput()`           | Botão/interface Shiny           |
+| `verbatimTextOutput()` | Texto (código)                  |
+
+
+## ui.R: [outputs]{style="color:#ED665D;"} {style="font-size: .65em"}
+
+- Para apresentar um objeto do tipo output, basta adicioná-lo ao `fluidPage()` com uma função do tipo `*output()`.
+
+![](images/output02.png){fig-align="center" width=800}
+
+## ui.R: [outputs]{style="color:#ED665D;"} {style="font-size: .65em"}
+
+- Para apresentar um objeto do tipo output, basta adicioná-lo ao `fluidPage()` com uma função do tipo `*output()`.
+
+![](images/output01.png){fig-align="center" width=800}
+
+## ui.R: [outputs]{style="color:#ED665D;"} {style="font-size: .65em"}
+
+::: columns
+:::{.column width="50%" style="font-size: .75em"}
+\
+\
+\
+```r
+library(shiny)
+
+ui <- fluidPage(
+  sliderInput(inputId = "num", 
+    label = "Escolha um valor", 
+    value = 25, min = 1, max = 100),
+  plotOutput("hist")
+)
+
+server <- function(input, output) {}
+
+shinyApp(ui = ui, server = server)
+```
+:::
+:::{.column width="50%" style="font-size: .65em"}
+::: {.r-stack}
+::: {.fragment .fade-in-then-out}
+![](images/output03.png){fig-align="center" height=800}
+:::
+::: {.fragment}
+![](images/output04.png){fig-align="center" height=800}
+:::
+:::
+:::
+:::
+
+# Server side
+
+## Server: regra I
+
+- Salvar o objeto a ser apresentado na [UI]{.meta-el} em [output\$\<ID\>]{.meta-el}.
+
+```{.r}
+server <- function(input, output) {
+  output$hist <- 'código'
+    
+    
+    
+}
+```
+
+## Server: regra II
+
+- Criar os objetos a serem apresentados com as funções \funR{render***()}.
+
+- *Atenção:* essa função [render\*\*\*()]{.inline-el} deve estar de acordo com a função de [\*\*\*Output]{.inline-el} presente no objeto `ui`.
+
+```{.r}
+server <- function(input, output) {
+  output$hist <- renderPlot({
+    
+  
+    
+  })
+}
+```
+
+## Server: funções `render`
+
+- - Usamos as funções [render***()]{.meta-el} para criar o tipo de output que desejamos fazer.
+
+|Funções.render... |Descrição              |
+|:-----------------|:----------------------|
+|renderDataTable() |Tabela interativa      |
+|renderImage()     |Imagem (png, jpg, ...) |
+|renderPlot()      |plot - gráfico R       |
+|renderPrint()     |Texto                  |
+|renderTable()     |Tabela (dataframe)     |
+|renderText()      |Texto (código)         |
+|renderUI()        |Botão Shiny            |
+
+## Server: regra II
+
+- Incluindo a função `hist()` para criar um histograma e então salvar no objeto [output\$\<ID\>]{.meta-el}.
+
+```{.r}
+server <- function(input, output) {
+  output$hist <- renderPlot({
+    titulo <- "100 valores simulados"
+    hist(x = rnorm(100), main = titulo)
+  })
+}
+```
+
+## Server: regra III
+
+- Acessar os valores no objeto [inputs]{style="color:#67BF5C;"} com [input\$]{style="color:#67BF5C;"}.
+
+```{.r}
+server <- function(input, output) {
+  output$hist <- renderPlot({
+    titulo <- "100 valores simulados"
+    hist(x = rnorm(input$num), main = titulo)
+  })
+}
+```
+
+## Server: regra III
+
+- Acessar os valores no objeto [inputs]{style="color:#67BF5C;"} com [input\$]{style="color:#67BF5C;"}.
+
+![](images/server-input.png){fig-align="center"}
+
+## Nossa vez {.our-turn}
+
+::: columns
+:::{.column width="50%" style="font-size: .65em"}
+\
+\
+\
+```r
+library(shiny)
+
+ui <- fluidPage(
+  sliderInput(inputId = "num", 
+    label = "Escolha um valor", 
+    value = 25, min = 1, max = 100),
+  plotOutput("hist")
+)
+
+server <- function(input, output) {
+  output$hist <- renderPlot({
+    hist(rnorm(input$num))
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+:::
+:::{.column width="50%"}
+![](images/hist-app.png){fig-align="center" height=800}
+:::
+:::
+
+## Sua  vez  {.your-turn style="font-size: .6em"}
+
+Abra o arquivo `02-hist-app.R` no RStudio e...
+
+- Modifique o app de forma que o título do aplicativo informe o número de valores que estão sendo simulados.
+- Customize a cor do histograma, os rótulos dos eixos x e y, tamanho da fonte.
+- Permita valores ente $1$ e $1000$ e que seja atualizado ao passo de $25$ unidades.
+- Crie mais dois botões para modificar a média e o desvio-padrão da distribuição normal.
+- Adicione um botão para selecionar a cor do histograma: preto, cinza, branco e azul.
+
+```{r}
+countdown::countdown(15)
+```
+
+# Layout da UI
+
+## Layout da UI
+
+- Existem diversas funções para estabelecer um layout para o aplicativo.
+
+![](images/layout.png){fig-align="center" height=600}
+
+## Panel (Abas)
+
+- Podemos também criar abas nos aplicativos.
+
+![](images/panel.png){fig-align="center" height=600}
+
+## Exemplo 01 - Sidebar/Mainpanel layout
+
+::: columns
+:::{.column width="50%" style="font-size: .65em"}
+\
+\
+\
+```r
+library(shiny)
+
+ui <- fluidPage(
+  titlePanel(title = "Título do meu app"),
+  sidebarLayout(
+    sidebarPanel("sidebarPanel"),
+    mainPanel("mainPanel")
+    )
+  )
+
+server <- function(input, output) {}
+
+shinyApp(ui = ui, server = server)
+```
+:::
+:::{.column width="50%"}
+![](images/ex-app01.png){fig-align="center" height=500}
+:::
+:::
+
+
+## Exemplo 02 - Sidebar/Mainpanel layout {style="font-size: .65em"}
+
+- Criar um aplicativo simples com um \funR{boxplot} dos valores simulados da distribuição normal no \funR{mainPanel()}. Botão para escolher o número de valores a serem simulados no \funR{sidebarPanel()}.
+
+![](images/ex-app02.png){fig-align="center" height=500}
+
+## Exemplo 02 - ui {style="font-size: .65em"}
+::: columns
+:::{.column width="50%" style="font-size: .65em"}
+\
+\
+\
+```r
+library(shiny)
+
+ui <- fluidPage(
+  titlePanel(title = "Título do meu app 2"),
+  sidebarLayout(
+    sidebarPanel(
+      numericInput(
+        inputId = "n_amostra", 
+        label = "Tamanho Amostral", 
+        value = 20, 
+        min = 1)
+    ),
+    mainPanel(
+      plotOutput("box")
+    )
+  )
+)
+```
+:::
+:::{.column width="50%"}
+![](images/ex-app02.png){fig-align="center" height=500}
+:::
+:::
+
+
+## Exemplo 02 - server {style="font-size: .65em"}
+::: columns
+:::{.column width="50%" style="font-size: .65em"}
+\
+\
+\
+```r
+server <- function(input, output) {
+  output$box <- renderPlot({
+    amostra <- rnorm(n = input$n_amostra)
+    boxplot(
+      x = amostra, 
+      col = "steelblue", 
+      main = "Boxplot",
+      xlab = "Dados")
+  })
+}
+```
+:::
+:::{.column width="50%"}
+![](images/ex-app02.png){fig-align="center" height=500}
+:::
+:::
+
+
+## Sua  vez  {.your-turn style="font-size: .6em"}
+
+Abra o arquivo `03-boxplot.R` no RStudio e adicione funcionalidades:
+
+1. Título customizável
+2. Alterar a cor do boxplot com um radioButton() no sidebarPanel.
+3. O usuário tem que ser ápito a alterar a média, desvio e tomanho da amostra
+4. Adicionar 5 estatísticas da sua preferência.
+
+```{r}
+countdown::countdown(15)
+```
+
+# Função `reactive`
+
+## Função reactive()
+
+- Função (de inputs) para ser utilizada em várias partes do aplicativo de forma a otimizar e organizar a aplicação.
+
+![](images/reactive.png){fig-align="center" height=500}
+
+## Função reactive()
+
+```{.r style="font-size: .6em" code-line-numbers="12|13|14"}
+library(shiny)
+
+ui <- fluidPage(
+  sliderInput(inputId = "num", 
+    label = "Tamanho amostral", 
+    value = 25, min = 1, max = 100),
+  plotOutput("hist"),
+  verbatimTextOutput("stats")
+)
+
+server <- function(input, output) {
+  data <- reactive({
+    rnorm(input$num)
+  })
+  output$hist <- renderPlot({
+    hist(data())
+  })
+  output$stats <- renderPrint({
+    summary(data())
+  })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+## Exemplo - Reactive
+
+- Criar um aplicativo para clusterizar a base de dados iris usando algoritmo de K-means.
+
+![](images/k-means.png){fig-align="center" height=500}
+
+## Exemplo - Reactive - ui
+
+```{.r style="font-size: .6em"}
+fluidPage(
+  headerPanel('Iris k-means clustering'),
+  sidebarPanel(
+    selectInput('xcol', 'Variável X', names(iris)),
+    selectInput('ycol', 'Variável Y', names(iris),
+      selected = names(iris)[2]),
+    numericInput('clusters', 'Número de Clusters', 3,
+      min = 1, max = 9)
+  ),
+  mainPanel(
+    plotOutput('plot1')
+  )
+)
+```
+
+## Exemplo - Reactive - server
+
+```{.r style="font-size: .6em"}
+server <- function(input, output) {
+
+  selectedData <- reactive({
+    iris[, c(input$xcol, input$ycol)]
+  })
+
+  clusters <- reactive({
+    kmeans(selectedData(), input$clusters)
+  })
+
+  output$plot1 <- renderPlot({
+    par(mar = c(5.1, 4.1, 0, 1))
+    plot(selectedData(),
+         col = clusters()$cluster,
+         pch = 20, cex = 3)
+    points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
+  })
+
+}
+```
+
+## Sua  vez  {.your-turn style="font-size: .6em"}
+
+::: task
+- Criar um aplicativo para gerar das seguintes distribuições de probabilidade:
+    - Normal
+    - Exponencial
+- Gerar um histograma [bonito]{.inline-el} dos valores.
+- Opção para selecionar a distribuição de probabilidade.
+- Opção para o número de valores simulados.
+:::
+
+![](images/dist-app.png){fig-align="center" height=500}
+
+```{r}
+countdown::countdown(15)
+```
+
+## Lista de Exercícios  {.your-turn style="font-size: .6em"}
+
+::: task
+- Aplicativo para analisar a base de dados \funR{iris}.
+    - Apresentar os dados usando a função \funR{?dataTableOutput} do pacote DT.
+    - Botão para selecionar qual estatística será calculada.
+    - Botão para selecionar em qual variável será aplicada o cálculo.
+    - Botão para indicar se a estatísitca é pela variável "Species". Dica: ?dplyr::group_by
+    - Apresentar a estatística calculada. Dica: ?verbatimTextOutput
+- Modifique o aplicativo `02-hist-app.R`
+    - Adicione uma saída com estatística de média e desvio amostral
+    - Utiliza a função reactive para gerar o histograma e saída resumo do item anterior
+::: 
+
+```{r}
+countdown::countdown(15)
+```
+
+
+# Perguntas?
+
+

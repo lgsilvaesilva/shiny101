@@ -1,0 +1,49 @@
+---
+anchor-sections: false
+section-divs: false
+css: assets/index.css
+---
+
+::: {.grid}
+
+::: {.g-col-4}
+\
+
+# Introdução ao Shiny - R
+
+#### A workshop at <br> DEST - UFMG
+:::
+
+::: {.g-col-8}
+
+![](assets/images/dalle-shunshie-lego.webp){fig-alt="Shiny Logo" width="500" border-radius="50%" .rounded50}
+
+:::
+
+:::
+
+Este workshop tem como objetivo capacitar praticantes iniciantes em R no desenvolvimento de aplicativos Shiny o mais
+rápido possível. A idéia é que o aluno já inicia com as mãos na massa enquanto os conceitos da ferramenta são transmitidos de forma intuitiva e progressiva. 
+
+::: content-block
+::: features
+::: feature
+### Introdução ao Shiny
+
+-   [Bem-vindo ao Shiny World](materials/1-single-docs/1-welcome-to-quarto)
+
+:::
+
+<!-- ::: feature -->
+<!-- ### Shiny Intermediário -->
+
+<!-- -   [Dynamic UI](materials/2-projects/1-docs-to-projects) -->
+<!-- -   [Bookmarking](materials/2-projects/2-websites) -->
+<!-- -   1:30-2 pm [Advanced Slidecraft](materials/2-projects/3-slidecraft) -->
+<!-- -   2-3 pm [Books](materials/2-projects/4-books) -->
+<!-- -   3-3:30 pm Coffee Break -->
+<!-- -   3:30-4:30 [Extensions](materials/2-projects/5-extensions) -->
+<!-- -   4:30-5 pm [Quarto Dev Q&A](materials/2-projects/6-dev-panel/slides.qmd) -->
+<!-- ::: -->
+:::
+:::

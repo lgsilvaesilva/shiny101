@@ -1,0 +1,13 @@
+---
+title: "Bem-vindo ao Shiny World"
+---
+
+> Este workshop tem como objetivo capacitar praticantes iniciantes em R no desenvolvimento de aplicativos Shiny o mais
+rápido possível. A idéia é que o aluno já inicia com as mãos na massa enquanto os conceitos da ferramenta são transmitidos de forma intuitiva e progressiva. 
+
+[Full Screen](slides.qmd)
+
+```{=html}
+<iframe class="slide-deck" src="slides.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+

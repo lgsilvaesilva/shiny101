@@ -1,0 +1,42 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "!materials/*/exercises/"
+  output-dir: docs
+
+from: markdown+emoji
+
+website:
+  title: "Introdução ao Shiny - R"
+  page-navigation: true
+  navbar:
+    background: light
+    foreground: dark
+    right:
+      - icon: github
+        href: https://github.com/posit-conf-2023/quarto-r
+        aria-label: GitHub
+  sidebar:
+    - title: "Materials"
+      style: docked
+      align: left
+      contents:
+          - section: "Intro: Simple Shiny"
+            contents:
+            - text: "1. Bem-vido ao Shiny World"
+              href: materials/1-single-docs/1-welcome-to-quarto/index.qmd
+  page-footer:
+    right: "This page is built with {{< fa heart >}} and [Quarto](https://quarto.org/)."
+    left: "&copy; 2024, Luís G. Silva e Silva"
+
+format: 
+  html:
+    theme: [default, assets/custom.scss]
+    toc: false
+    
+# Design tips:
+# 1. maggieappleton.com
+# 2. Palette: https://www.jpl.nasa.gov/images/the-grand-tour-jpl-travel-poster
+
+  
