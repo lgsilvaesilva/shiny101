@@ -15,7 +15,7 @@ website:
     foreground: dark
     right:
       - icon: github
-        href: https://github.com/posit-conf-2023/quarto-r
+        href: https://github.com/lgsilvaesilva/shiny101/
         aria-label: GitHub
   sidebar:
     - title: "Materials"
@@ -35,8 +35,3 @@ format:
     theme: [default, assets/custom.scss]
     toc: false
     
-# Design tips:
-# 1. maggieappleton.com
-# 2. Palette: https://www.jpl.nasa.gov/images/the-grand-tour-jpl-travel-poster
-
-  
