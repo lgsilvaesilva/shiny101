@@ -2,392 +2,392 @@
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#section",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#section",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "",
-    "text": "Materiais do Workshop encontram-se em:\nlgsilvaesilva.github.io/shiny101/"
+    "text": "Materiais do Workshop encontram-se em:\nhttps://github.com/lgsilvaesilva/shiny101"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#section-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#section-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "",
     "text": "Objetivos do Workshop\n\n\nCada um de vocês desenvolva o seu próprio aplicativo\nAprender um com os outros\nConstruir um entendimento geral do Shiny"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#from-r-code-to-apps",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#from-r-code-to-apps",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "From R code to Apps",
     "text": "From R code to Apps"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#fluxo-do-workshop",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#fluxo-do-workshop",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Fluxo do Workshop",
     "text": "Fluxo do Workshop"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#o-que-nós-estatísticos-entregamos",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#o-que-nós-estatísticos-entregamos",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "O que nós estatísticos entregamos?",
     "text": "O que nós estatísticos entregamos?\n\n\nQual o produto de um estatístico?\n\nAnálise de dados? Modelos estocásticos? Previsão? Recomendação?\n\nComo os resulados/produtos são apresentados e disponibilizados?\n\nRelatórios (PDF, Word)\nLista de tabelas e gráficos\nPlanilhas (Excel)\nApresentações (Power point)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#produtos-tradicionais",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#produtos-tradicionais",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Produtos tradicionais",
     "text": "Produtos tradicionais\n\n\n\n\n\n\nRelatórios\n\n\n\n\n\n\n\nPlanilhas\n\n\n\n\n\n\n\n\n\nApresentações\n\n\n\n\n\n\n\nLista de arquivos"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#produtos-tradicionais-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#produtos-tradicionais-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Produtos tradicionais",
     "text": "Produtos tradicionais"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "E se?",
     "text": "E se?"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "E se?",
     "text": "E se?"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-2",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-2",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "E se?",
     "text": "E se?"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-3",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-3",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "E se?",
     "text": "E se?"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-4",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-4",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "E se?",
     "text": "E se?"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-5",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-5",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "E se?",
     "text": "E se?"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-6",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-6",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "E se?",
     "text": "E se?"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-7",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#e-se-7",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "E se?",
     "text": "E se?"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#section-2",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#section-2",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "",
     "text": "Encontre mais exemplos em:\nhttps://shiny.posit.co/r/gallery/"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#pacote-shiny",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#pacote-shiny",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Pacote Shiny",
     "text": "Pacote Shiny\n\n\n\n\n\n\nR Shiny\n\n\n\nR Shiny = R + Web\nShiny é um pacote de código aberto desenvolvido pelo desenvolvedor de software Winston Chang na empresa Posit (RStudio).\nFacilita a criação de aplicações Web, tais como análises estatísticas e visualiazações diretament do R.\nNão é necessário conhecimento em HTML, css, JavaScript.\nPara customizações mais avançadas, o pacote shiny permite a interação com outras linguagens."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#mas-o-que-é-um-aplicatico-shiny",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#mas-o-que-é-um-aplicatico-shiny",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Mas o que é um aplicatico Shiny?",
     "text": "Mas o que é um aplicatico Shiny?\n\n\n\n\n\n\nShiny app\n\n\n\nShiny app é uma página web (UI - User interface) conectada a um computador/server que esteja rodando uma sessão R (Server).\nOs usuários interagem com a interface web (UI) que envia comandos R e então retornam os resultados para o usuário através da (UI)."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#objetos-ui-e-server",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#objetos-ui-e-server",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Objetos ui e server",
     "text": "Objetos ui e server\n\n\n\n\n\nui\n\n\n\nfunções escritas em R}para construir a interface em HTML que será exibida para o usuário.\n\n\n\nui &lt;- fluidPage()\n\n\n\n\n\n\n\nserver\n\n\n\nfunção que irá modificar e apresentar os objetos R na UI. Pense neste objeto como o ``motor’’ do aplicativo.\n\nserver &lt;- function(input, output) {}\n\n\n\n\n\n\nlibrary(shiny)\nui &lt;- fluidPage(\"Olá, mundo!\")\nserver &lt;- function(input, output){}\nshinyApp(ui = ui, server = server)\n\n\n\nshinyApp combina os objetos ui e server e constrói o applicativo.\nExperimente rodar o código apresentado acima."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#objetos-ui-e-server-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#objetos-ui-e-server-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Objetos ui e server",
     "text": "Objetos ui e server\n\n\n\n\n\nlibrary(shiny)\nui &lt;- fluidPage(\"Olá, mundo!\")\nserver &lt;- function(input, output){}\nshinyApp(ui = ui, server = server)\n\n\n\n\n\n\n\nCarrega o pacore shiny com library(shiny)\nDefine a interface do usuário, a página HTML com a qual os usuários interagem. Neste caso, é uma página que contém as palavras “Olá, mundo!”.\nEspecifica o comportamento do nosso aplicativo definindo a função server. Atualmente está vazia, então nosso aplicativo não faz nada, mas voltaremos a revisitar isso em breve.\nExecuta shinyApp(ui, server) para construir e iniciar uma aplicação Shiny a partir da UI e do servidor."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#objetos-ui-e-server-2",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#objetos-ui-e-server-2",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Objetos ui e server",
     "text": "Objetos ui e server\n\nEm geral os objetos ui e server são criados em arquivos separados: ui.R e server.R\nA maneira mais comum de criar am aplicativo shiny é criando um diretório da seguinte forma:\n\n app-name: diretório com o nome do app.\n\n ui.R: arquivo com as funções de interface\n server.R: arquivos com as funções de operações da interface.\n www: diretório com e imagens que serão compartilhados com o browser."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Sua vez",
     "text": "Sua vez\nAbra o arquivo 01-ola-mundo.R no RStudio e…\n\nSubstitua seu ui por:\n\nui &lt;- fluidPage(\n  selectInput(\"dataset\", label = \"Dataset\", choices = ls(\"package:datasets\")),\n  verbatimTextOutput(\"summary\"),\n  tableOutput(\"table\")\n)\n\nExecute o applicativo e veja o resultado\nFaça o mesmo com o objeto server\n\nserver &lt;- function(input, output, session) {\n  output$summary &lt;- renderPrint({\n    dataset &lt;- get(input$dataset, \"package:datasets\")\n    summary(dataset)\n  })\n  \n  output$table &lt;- renderTable({\n    dataset &lt;- get(input$dataset, \"package:datasets\")\n    dataset\n  })\n}\n\nExecute o applicativo novamente e veja o resultado\nSalve o script R com o nome app.R\n\n\n\n\n−+\n10:00"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez---explicado",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez---explicado",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Sua vez - Explicado",
     "text": "Sua vez - Explicado\n\n\nui &lt;- fluidPage(\n  selectInput(\"dataset\", label = \"Dataset\", choices = ls(\"package:datasets\")),\n  verbatimTextOutput(\"summary\"),\n  tableOutput(\"table\")\n)\n\nfluidPage() é uma função de layout que estabelece uma estrutura visual básica da página.\nselectInput() é um controle de entrada (input) que permite ao usuário interagir com o aplicativo fornecendo um valor. Neste caso, é uma caixa de seleção com o label “Conjunto de Dados” e permite escolher um dos conjuntos de dados integrados que acompanham o R.\nverbatimTextOutput() e tableOutput() são controles de saída (output) que indicam ao Shiny onde colocar a saída renderizada (entraremos em como fazer isso em um momento). verbatimTextOutput() exibe código e tableOutput() exibe tabelas.\n\n\nserver &lt;- function(input, output, session) {\n  output$summary &lt;- renderPrint({\n    dataset &lt;- get(input$dataset, \"package:datasets\")\n    summary(dataset)\n  })\n  \n  output$table &lt;- renderTable({\n    dataset &lt;- get(input$dataset, \"package:datasets\")\n    dataset\n  })\n}\n\nO lado esquerdo do operador de atribuição (&lt;-), output$ID, indica que você está fornecendo a receita para a saída do Shiny com aquele ID.\nO lado direito da atribuição usa uma função de renderização específica para envolver algum código que você fornece.\nCada função render{TIPO} é projetada para produzir um tipo específico de saída (por exemplo, texto, tabelas e gráficos), e geralmente é emparelhada com uma função {tipo}Output.\nPor exemplo, neste aplicativo, renderPrint() é emparelhado com verbatimTextOutput() para exibir um resumo estatístico com texto de largura fixa (verbatim), e renderTable() é emparelhado com tableOutput() para mostrar os dados de entrada em uma tabela."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#entendendo-os-inputs-e-outputs",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#entendendo-os-inputs-e-outputs",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Entendendo os inputs e outputs",
     "text": "Entendendo os inputs e outputs"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-inputs-e-outputs",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-inputs-e-outputs",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "ui.R: inputs e outputs",
     "text": "ui.R: inputs e outputs\nui &lt;- fluidPage(\n  # inputs(): funções de input,\n  # outputs(): funções de output\n)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-inputs-e-outputs-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-inputs-e-outputs-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "ui.R: inputs e outputs",
     "text": "ui.R: inputs e outputs\n\nCriando um botão de input com uma das funções de inputs().\n\nsliderInput(inputId = \"nume\",            # identificador do butao (input)\n            label = \"Escolha um valor\",  # texto que irá aparecer na interface\n            min = 0,                     # valor mínimo que o botão aceita\n            max = 100,                   # valor máximo que o botão aceita\n            value = 50,                  # valor padrão inicial\n            step = 1)                    # intervalo entre cada valor\n\n\nBotão em HTML\n\n&lt;div class=\"form-group shiny-input-container\"&gt;\n  &lt;label class=\"control-label\" id=\"nume-label\" for=\"nume\"&gt;Escolha um valor&lt;/label&gt;\n  &lt;input class=\"js-range-slider\" id=\"nume\" data-skin=\"shiny\" data-min=\"0\" data-max=\"100\" data-from=\"50\" data-step=\"1\" data-grid=\"true\" data-grid-num=\"10\" data-grid-snap=\"false\" data-prettify-separator=\",\" data-prettify-enabled=\"true\" data-keyboard=\"true\" data-data-type=\"number\"/&gt;\n&lt;/div&gt;"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-inputs-e-outputs-2",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-inputs-e-outputs-2",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "ui.R: inputs e outputs",
     "text": "ui.R: inputs e outputs\n\n\n\n\n\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n\n  \n  \n)\n\nserver &lt;- function(input, output) {}\n\nshinyApp(ui = ui, server = server)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-inputs-e-outputs-3",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-inputs-e-outputs-3",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "ui.R: inputs e outputs",
     "text": "ui.R: inputs e outputs\n\n\n\n\n\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  sliderInput(inputId = \"num\", \n    label = \"Escolha um valor\", \n    value = 25, min = 1, max = 100)\n)\n\nserver &lt;- function(input, output) {}\n\nshinyApp(ui = ui, server = server)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-inputs",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-inputs",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "ui.R: inputs",
     "text": "ui.R: inputs"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Sua vez",
     "text": "Sua vez\n\nAbra o arquivo suavez-02.R\nAdicione os seguintes botões:\n\n\n\n\nBotões\n\n\n\nradio button\ncheck button\ntext input\n\n\n\n\n\n\n\nTip\n\n\n\nConfigure o inputId, label, choices, selected\nVeja também choiceNames e choiceValues\n\n\n\n\n\n\n\n−+\n15:00"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-outputs",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-outputs",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "ui.R: outputs",
     "text": "ui.R: outputs\n\nAs funções abaixo tem como objetivo informar ao front-end qual o tipo de objeto será renderizado.\n\n\n\n\n\n\n\nFunções output\nDescrição\n\n\n\n\ndataTableOutput()\nTabela interativa\n\n\nhtmlOutput()\nHTML bruto\n\n\nimageOutput()\nImagem (png, jpg, …)\n\n\nplotOutput()\nGráfico R\n\n\ntableOutput()\nTabela (dataframe)\n\n\ntextOutput()\nTexto\n\n\nuiOutput()\nBotão/interface Shiny\n\n\nverbatimTextOutput()\nTexto (código)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-outputs-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-outputs-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "ui.R: outputs",
     "text": "ui.R: outputs\n\nPara apresentar um objeto do tipo output, basta adicioná-lo ao fluidPage() com uma função do tipo *output()."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-outputs-2",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-outputs-2",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "ui.R: outputs",
     "text": "ui.R: outputs\n\nPara apresentar um objeto do tipo output, basta adicioná-lo ao fluidPage() com uma função do tipo *output()."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-outputs-3",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#ui.r-outputs-3",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "ui.R: outputs",
     "text": "ui.R: outputs\n\n\n\n\n\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  sliderInput(inputId = \"num\", \n    label = \"Escolha um valor\", \n    value = 25, min = 1, max = 100),\n  plotOutput(\"hist\")\n)\n\nserver &lt;- function(input, output) {}\n\nshinyApp(ui = ui, server = server)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-regra-i",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-regra-i",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Server: regra I",
     "text": "Server: regra I\n\nSalvar o objeto a ser apresentado na UI em output$&lt;ID&gt;.\n\nserver &lt;- function(input, output) {\n  output$hist &lt;- 'código'\n    \n    \n    \n}"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-regra-ii",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-regra-ii",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Server: regra II",
     "text": "Server: regra II\n\nCriar os objetos a serem apresentados com as funções .\nAtenção: essa função render***() deve estar de acordo com a função de ***Output presente no objeto ui.\n\nserver &lt;- function(input, output) {\n  output$hist &lt;- renderPlot({\n    \n  \n    \n  })\n}"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-funções-render",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-funções-render",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Server: funções render",
     "text": "Server: funções render\n\n\nUsamos as funções render***() para criar o tipo de output que desejamos fazer.\n\n\n\n\n\nFunções.render…\nDescrição\n\n\n\n\nrenderDataTable()\nTabela interativa\n\n\nrenderImage()\nImagem (png, jpg, …)\n\n\nrenderPlot()\nplot - gráfico R\n\n\nrenderPrint()\nTexto\n\n\nrenderTable()\nTabela (dataframe)\n\n\nrenderText()\nTexto (código)\n\n\nrenderUI()\nBotão Shiny"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-regra-ii-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-regra-ii-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Server: regra II",
     "text": "Server: regra II\n\nIncluindo a função hist() para criar um histograma e então salvar no objeto output$&lt;ID&gt;.\n\nserver &lt;- function(input, output) {\n  output$hist &lt;- renderPlot({\n    titulo &lt;- \"100 valores simulados\"\n    hist(x = rnorm(100), main = titulo)\n  })\n}"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-regra-iii",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-regra-iii",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Server: regra III",
     "text": "Server: regra III\n\nAcessar os valores no objeto inputs com input$.\n\nserver &lt;- function(input, output) {\n  output$hist &lt;- renderPlot({\n    titulo &lt;- \"100 valores simulados\"\n    hist(x = rnorm(input$num), main = titulo)\n  })\n}"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-regra-iii-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#server-regra-iii-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Server: regra III",
     "text": "Server: regra III\n\nAcessar os valores no objeto inputs com input$."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#nossa-vez",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#nossa-vez",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Nossa vez",
     "text": "Nossa vez\n\n\n\n\n\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  sliderInput(inputId = \"num\", \n    label = \"Escolha um valor\", \n    value = 25, min = 1, max = 100),\n  plotOutput(\"hist\")\n)\n\nserver &lt;- function(input, output) {\n  output$hist &lt;- renderPlot({\n    hist(rnorm(input$num))\n  })\n}\n\nshinyApp(ui = ui, server = server)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez-2",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez-2",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Sua vez",
     "text": "Sua vez\nAbra o arquivo 02-hist-app.R no RStudio e…\n\nModifique o app de forma que o título do aplicativo informe o número de valores que estão sendo simulados.\nCustomize a cor do histograma, os rótulos dos eixos x e y, tamanho da fonte.\nPermita valores ente \\(1\\) e \\(1000\\) e que seja atualizado ao passo de \\(25\\) unidades.\nCrie mais dois botões para modificar a média e o desvio-padrão da distribuição normal.\nAdicione um botão para selecionar a cor do histograma: preto, cinza, branco e azul.\n\n\n\n\n−+\n15:00"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#layout-da-ui-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#layout-da-ui-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Layout da UI",
     "text": "Layout da UI\n\nExistem diversas funções para estabelecer um layout para o aplicativo."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#panel-abas",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#panel-abas",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Panel (Abas)",
     "text": "Panel (Abas)\n\nPodemos também criar abas nos aplicativos."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo-01---sidebarmainpanel-layout",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo-01---sidebarmainpanel-layout",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Exemplo 01 - Sidebar/Mainpanel layout",
     "text": "Exemplo 01 - Sidebar/Mainpanel layout\n\n\n\n\n\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  titlePanel(title = \"Título do meu app\"),\n  sidebarLayout(\n    sidebarPanel(\"sidebarPanel\"),\n    mainPanel(\"mainPanel\")\n    )\n  )\n\nserver &lt;- function(input, output) {}\n\nshinyApp(ui = ui, server = server)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo-02---sidebarmainpanel-layout",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo-02---sidebarmainpanel-layout",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Exemplo 02 - Sidebar/Mainpanel layout",
     "text": "Exemplo 02 - Sidebar/Mainpanel layout\n\nCriar um aplicativo simples com um dos valores simulados da distribuição normal no . Botão para escolher o número de valores a serem simulados no ."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo-02---ui",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo-02---ui",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Exemplo 02 - ui",
     "text": "Exemplo 02 - ui\n\n\n\n\n\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  titlePanel(title = \"Título do meu app 2\"),\n  sidebarLayout(\n    sidebarPanel(\n      numericInput(\n        inputId = \"n_amostra\", \n        label = \"Tamanho Amostral\", \n        value = 20, \n        min = 1)\n    ),\n    mainPanel(\n      plotOutput(\"box\")\n    )\n  )\n)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo-02---server",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo-02---server",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Exemplo 02 - server",
     "text": "Exemplo 02 - server\n\n\n\n\n\n\nserver &lt;- function(input, output) {\n  output$box &lt;- renderPlot({\n    amostra &lt;- rnorm(n = input$n_amostra)\n    boxplot(\n      x = amostra, \n      col = \"steelblue\", \n      main = \"Boxplot\",\n      xlab = \"Dados\")\n  })\n}"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez-3",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez-3",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Sua vez",
     "text": "Sua vez\nAbra o arquivo 03-boxplot.R no RStudio e adicione funcionalidades:\n\nTítulo customizável\nAlterar a cor do boxplot com um radioButton() no sidebarPanel.\nO usuário tem que ser ápito a alterar a média, desvio e tomanho da amostra\nAdicionar 5 estatísticas da sua preferência.\n\n\n\n\n−+\n15:00"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#função-reactive-1",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#função-reactive-1",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Função reactive()",
     "text": "Função reactive()\n\nFunção (de inputs) para ser utilizada em várias partes do aplicativo de forma a otimizar e organizar a aplicação."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#função-reactive-2",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#função-reactive-2",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Função reactive()",
     "text": "Função reactive()\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  sliderInput(inputId = \"num\", \n    label = \"Tamanho amostral\", \n    value = 25, min = 1, max = 100),\n  plotOutput(\"hist\"),\n  verbatimTextOutput(\"stats\")\n)\n\nserver &lt;- function(input, output) {\n  data &lt;- reactive({\n    rnorm(input$num)\n  })\n  output$hist &lt;- renderPlot({\n    hist(data())\n  })\n  output$stats &lt;- renderPrint({\n    summary(data())\n  })\n}\n\nshinyApp(ui = ui, server = server)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo---reactive",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo---reactive",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Exemplo - Reactive",
     "text": "Exemplo - Reactive\n\nCriar um aplicativo para clusterizar a base de dados iris usando algoritmo de K-means."
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo---reactive---ui",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo---reactive---ui",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Exemplo - Reactive - ui",
     "text": "Exemplo - Reactive - ui\nfluidPage(\n  headerPanel('Iris k-means clustering'),\n  sidebarPanel(\n    selectInput('xcol', 'Variável X', names(iris)),\n    selectInput('ycol', 'Variável Y', names(iris),\n      selected = names(iris)[2]),\n    numericInput('clusters', 'Número de Clusters', 3,\n      min = 1, max = 9)\n  ),\n  mainPanel(\n    plotOutput('plot1')\n  )\n)"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo---reactive---server",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#exemplo---reactive---server",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Exemplo - Reactive - server",
     "text": "Exemplo - Reactive - server\nserver &lt;- function(input, output) {\n\n  selectedData &lt;- reactive({\n    iris[, c(input$xcol, input$ycol)]\n  })\n\n  clusters &lt;- reactive({\n    kmeans(selectedData(), input$clusters)\n  })\n\n  output$plot1 &lt;- renderPlot({\n    par(mar = c(5.1, 4.1, 0, 1))\n    plot(selectedData(),\n         col = clusters()$cluster,\n         pch = 20, cex = 3)\n    points(clusters()$centers, pch = 4, cex = 4, lwd = 4)\n  })\n\n}"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez-4",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#sua-vez-4",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Sua vez",
     "text": "Sua vez\n\n\nCriar um aplicativo para gerar das seguintes distribuições de probabilidade:\n\nNormal\nExponencial\n\nGerar um histograma bonito dos valores.\nOpção para selecionar a distribuição de probabilidade.\nOpção para o número de valores simulados.\n\n\n\n\n\n\n\n\n\n\n−+\n15:00"
   },
   {
     "objectID": "materials/1-single-docs/1-welcome-to-quarto/slides.html#lista-de-exercícios",
     "href": "materials/1-single-docs/1-welcome-to-quarto/slides.html#lista-de-exercícios",
-    "title": "Bem-vindo ao Shiny World?",
+    "title": "Bem-vindo ao Shiny World",
     "section": "Lista de Exercícios",
     "text": "Lista de Exercícios\n\n\nAplicativo para analisar a base de dados .\n\nApresentar os dados usando a função do pacote DT.\nBotão para selecionar qual estatística será calculada.\nBotão para selecionar em qual variável será aplicada o cálculo.\nBotão para indicar se a estatísitca é pela variável “Species”. Dica: ?dplyr::group_by\nApresentar a estatística calculada. Dica: ?verbatimTextOutput\n\nModifique o aplicativo 02-hist-app.R\n\nAdicione uma saída com estatística de média e desvio amostral\nUtiliza a função reactive para gerar o histograma e saída resumo do item anterior\n\n\n\n\n\n\n−+\n15:00"
   },
@@ -403,21 +403,7 @@
     "href": "about.html",
     "title": "About the Workshop",
     "section": "",
-    "text": "These materials are for two one-day workshops taking place before posit::conf 2023 in Chicago, Illinois."
-  },
-  {
-    "objectID": "about.html#teaching-team",
-    "href": "about.html#teaching-team",
-    "title": "About the Workshop",
-    "section": "Teaching Team",
-    "text": "Teaching Team\n\nAndrew Bray\nAndrew Bray is a statistician at UC Berkeley where he develops and teaches courses in statistics and data science. His gets excited about empowering students to use data to understand the world and enjoys being part of a community of people developing open source software and open source educational resources. Though primarily an R user, he taught a large data science class to 1100 students in Python, which had him sorely missing the R Markdown ecosystem. The experience made him particularly grateful for Quarto as a bridge to other communities of data scientists.\n\n\nMouna Belaid\n\n\nEmil Hvitfeldt\n\n\nAmelia McNamara"
-  },
-  {
-    "objectID": "about.html#about-these-materials",
-    "href": "about.html#about-these-materials",
-    "title": "About the Workshop",
-    "section": "About these materials",
-    "text": "About these materials\nThis source code and license for all of the materials found on this website can be found on Github ."
+    "text": "TODO"
   },
   {
     "objectID": "index.html",
