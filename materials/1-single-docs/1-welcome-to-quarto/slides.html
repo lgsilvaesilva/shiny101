@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.553">
+
+  <title>Introdução ao Shiny - R - Bem-vindo ao Shiny World?</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link href="../../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="../../../site_libs/countdown-0.4.0/countdown.js"></script>
+</head>
+<body class="quarto-light">
+<div style="display:none;"></div>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#f8f5f0" data-background-image="../../../site_libs/quarto-contrib/quarto-project/qmdr/qmdrslides/seaplane-bg.png" data-background-size="contain" class="quarto-title-block center">
+  <h1 class="title">Bem-vindo ao Shiny World?</h1>
+  <p class="subtitle">Workshop: Introdução ao Shiny <br> UFMG::DEST</p>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section>
+<section id="sobre-o-workshop" class="title-slide slide level1 center">
+<h1>Sobre o Workshop</h1>
+
+</section>
+<section id="section" class="slide level2" data-menu-title="Website Link" style="text-align: center">
+<h2></h2>
+<p><br>
+<br>
+<br>
+</p>
+<div class="r-fit-text">
+<p>Materiais do Workshop encontram-se em:</p>
+<p><a href="lgsilvaesilva/shiny101">lgsilvaesilva.github.io/shiny101</a></p>
+</div>
+</section>
+<section id="section-1" class="slide level2" data-menu-item="Workshop Goals">
+<h2></h2>
+<p><br>
+<br>
+</p>
+<h3 style="font-size: 2.5em; text-align: center" id="objetivos-do-workshop">Objetivos do Workshop</h3>
+<div style="font-size: 1.5em">
+<ol type="1">
+<li class="fragment"><p>Cada um de vocês desenvolva o seu próprio aplicativo</p></li>
+<li class="fragment"><p>Aprender um com os outros</p></li>
+<li class="fragment"><p>Construir um entendimento geral do Shiny</p></li>
+</ol>
+</div>
+</section>
+<section id="from-r-code-to-apps" class="slide level2">
+<h2>From R code to Apps</h2>
+
+<img data-src="images/img-r-to-shiny.webp" class="quarto-figure quarto-figure-center r-stretch" alt="the widescreen image showing the transformation of an R script into an R Shiny application, now featuring data visualizations like bar charts and scatter plots on the completed app side. The builders, resembling cheerful Lego toys, are vividly bringing the code to life with colorful visual representations." width="1100"></section>
+<section id="fluxo-do-workshop" class="slide level2">
+<h2>Fluxo do Workshop</h2>
+<div class="r-stretch quarto-layout-panel" style="text-align: center" data-layout="[2, 2]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/slide-normal.webp" class="drop fragment" width="540"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/slide-discussion.webp" class="drop fragment" width="540"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/slide-our-turn.webp" class="drop fragment" width="540"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/slide-your-turn.webp" class="drop fragment" width="540"></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="porquê-shiny" class="title-slide slide level1 center">
+<h1>Porquê Shiny?</h1>
+<p>. . . <span class="bigadage">Sit back and enjoy the tour!</span></p>
+</section>
+<section id="o-que-nós-estatísticos-entregamos" class="slide level2">
+<h2>O que nós estatísticos entregamos?</h2>
+<div>
+<ul>
+<li class="fragment">Qual o produto de um estatístico?
+<ul>
+<li class="fragment">Análise de dados? Modelos estocásticos? Previsão? Recomendação?</li>
+</ul></li>
+<li class="fragment">Como os resulados/produtos são apresentados e disponibilizados?
+<ul>
+<li class="fragment">Relatórios (PDF, Word)</li>
+<li class="fragment">Lista de tabelas e gráficos</li>
+<li class="fragment">Planilhas (Excel)</li>
+<li class="fragment">Apresentações (Power point)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="produtos-tradicionais" class="slide level2">
+<h2>Produtos tradicionais</h2>
+<div class="r-stretch quarto-layout-panel" style="text-align: center" data-layout="[2, 2]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/old-stats-report.webp" class="drop fragment" width="540"></p>
+<figcaption>Relatórios</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/img-report-excel-bad.webp" class="drop fragment" width="540"></p>
+<figcaption>Planilhas</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/img-report-powerpoint-bad.webp" class="drop fragment" width="540"></p>
+<figcaption>Apresentações</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/img-report-files.webp" class="drop fragment" width="540"></p>
+<figcaption>Lista de arquivos</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="produtos-tradicionais-1" class="slide level2">
+<h2>Produtos tradicionais</h2>
+
+<img data-src="images/img-boring-report.webp" class="quarto-figure quarto-figure-center r-stretch" alt="image depicting a whimsical scene in a meeting room, where a builder resembling cheerful Lego toys is presenting a boring report. The other members, also depicted as Lego-like figures, are humorously portrayed with their heads down on the table, appearing to sleep due to the dullness of the presentation." width="1100"></section>
+<section id="e-se" class="slide level2">
+<h2>E se?</h2>
+<iframe width="100%" height="88%" src="https://voronoys.shinyapps.io/fairsplit/" title="Fair Split"></iframe>
+<!-- ![https://voronoys.shinyapps.io/fairsplit/](images/ex-shiny-fairsplit-01.png){.drop} -->
+</section>
+<section id="e-se-1" class="slide level2">
+<h2>E se?</h2>
+<iframe width="100%" height="88%" src="https://lgsilvaesilva.shinyapps.io/irtapp/" title="IRT App"></iframe>
+<!-- ![](images/shiny-tri.png){.drop} -->
+</section>
+<section id="e-se-2" class="slide level2">
+<h2>E se?</h2>
+<iframe width="100%" height="88%" src="https://voronoys.shinyapps.io/voronoys/" title="Voronoys App"></iframe>
+</section>
+<section id="e-se-3" class="slide level2">
+<h2>E se?</h2>
+<iframe width="100%" height="88%" src="https://lgsilvaesilva.shinyapps.io/biodiversity2/" title="Biodiversity App"></iframe>
+</section>
+<section id="e-se-4" class="slide level2">
+<h2>E se?</h2>
+<iframe width="100%" height="88%" src="https://voronoys.shinyapps.io/barchartraceR2D3/" title="barchartraceR2D3 App"></iframe>
+</section>
+<section id="e-se-5" class="slide level2">
+<h2>E se?</h2>
+
+<img data-src="images/shiny-programasus.png" class="drop quarto-figure quarto-figure-center r-stretch"></section>
+<section id="e-se-6" class="slide level2">
+<h2>E se?</h2>
+
+<img data-src="images/shiny-ars.png" class="drop quarto-figure quarto-figure-center r-stretch"></section>
+<section id="e-se-7" class="slide level2">
+<h2>E se?</h2>
+
+<img data-src="images/shiny-em.png" class="drop quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-2" class="slide level2" data-menu-title="Website Link" style="text-align: center">
+<h2></h2>
+<div class="r-fit-text">
+<p>Encontre mais exemplos em:</p>
+<p><a href="https://shiny.posit.co/r/gallery/">https://shiny.posit.co/r/gallery/</a></p>
+</div>
+</section></section>
+<section>
+<section id="conceitos-básicos" class="title-slide slide level1 center">
+<h1>Conceitos básicos</h1>
+
+</section>
+<section id="pacote-shiny" class="slide level2">
+<h2>Pacote Shiny</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>R Shiny</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>R Shiny = R + Web</li>
+<li>Shiny é um pacote de <span class="meta-el">código aberto</span> desenvolvido pelo desenvolvedor de software <a href="https://rstudio.github.io/shiny/authors.html">Winston Chang</a> na empresa Posit (RStudio).</li>
+<li>Facilita a criação de aplicações Web, tais como análises estatísticas e visualiazações diretament do R.</li>
+<li><span class="meta-el">Não é necessário</span> conhecimento em HTML, css, JavaScript.</li>
+<li>Para customizações mais avançadas, o pacote shiny permite a <span class="meta-el">interação com outras linguagens</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<img data-src="images/shiny-logo.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="mas-o-que-é-um-aplicatico-shiny" class="slide level2">
+<h2>Mas o que é um aplicatico Shiny?</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Shiny app</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Shiny app é uma página web (<span class="meta-el">UI - <em>User interface</em></span>) conectada a um computador/server que esteja rodando uma sessão <code>R</code> (<span class="meta-el">Server</span>).</li>
+<li>Os usuários interagem com a interface web (<span class="meta-el">UI</span>) que envia comandos <code>R</code> e então retornam os resultados para o usuário através da (<span class="meta-el">UI</span>).</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/r-shiny.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/r-shiny-cloud.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="objetos-ui-e-server" class="slide level2">
+<h2>Objetos <code>ui</code> e <code>server</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><code>ui</code></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>funções escritas em R}para construir a interface em HTML que será exibida para o usuário.<br>
+<br>
+</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong><code>server</code></strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>função que irá modificar e apresentar os objetos <code>R</code> na <code>UI</code>. Pense neste objeto como o ``motor’’ do aplicativo.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb3-2"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(<span class="st">"Olá, mundo!"</span>)</span>
+<span id="cb3-3"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output){}</span>
+<span id="cb3-4"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<ul>
+<li><code>shinyApp</code> combina os objetos <code>ui</code> e <code>server</code> e constrói o applicativo.</li>
+<li>Experimente rodar o código apresentado acima.</li>
+</ul>
+</div>
+</section>
+<section id="objetos-ui-e-server-1" class="slide level2">
+<h2>Objetos <code>ui</code> e <code>server</code></h2>
+<div class="columns">
+<div class="column" style="font-size: .55em">
+<p><br>
+<br>
+</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb4-2"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(<span class="st">"Olá, mundo!"</span>)</span>
+<span id="cb4-3"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output){}</span>
+<span id="cb4-4"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/img-ola-mundo.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+</div><div class="column" style="font-size: .65em">
+<ol type="1">
+<li><p>Carrega o pacore shiny com <code>library(shiny)</code></p></li>
+<li><p>Define a interface do usuário, a página HTML com a qual os usuários interagem. Neste caso, é uma página que contém as palavras “Olá, mundo!”.</p></li>
+<li><p>Especifica o comportamento do nosso aplicativo definindo a função <code>server</code>. Atualmente está vazia, então nosso aplicativo não faz nada, mas voltaremos a revisitar isso em breve.</p></li>
+<li><p>Executa <code>shinyApp(ui, server)</code> para construir e iniciar uma aplicação Shiny a partir da UI e do servidor.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="objetos-ui-e-server-2" class="slide level2">
+<h2>Objetos <code>ui</code> e <code>server</code></h2>
+<ul>
+<li>Em geral os objetos <code>ui</code> e <code>server</code> são criados em arquivos separados: <span class="meta-el">ui.R</span> e <span class="meta-el">server.R</span></li>
+<li>A maneira mais comum de criar am aplicativo shiny é criando um diretório da seguinte forma:
+<ul>
+<li><i class="fa-solid fa-folder-open fa-1x" aria-label="folder-open"></i> app-name: diretório com o nome do app.
+<ul>
+<li><i class="fa-solid fa-file fa-1x" aria-label="file"></i> ui.R: arquivo com as funções de interface</li>
+<li><i class="fa-solid fa-file fa-1x" aria-label="file"></i> server.R: arquivos com as funções de operações da interface.</li>
+<li><i class="fa-solid fa-folder-open fa-1x" aria-label="folder-open"></i> www: diretório com e imagens que serão compartilhados com o browser.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sua-vez" class="slide level2 your-turn" style="font-size: .6em">
+<h2>Sua vez</h2>
+<p>Abra o arquivo <code>01-ola-mundo.R</code> no RStudio e…</p>
+<ol type="1">
+<li>Substitua seu <span class="meta-el"><code>ui</code></span> por:</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb5-2"><a></a>  <span class="fu">selectInput</span>(<span class="st">"dataset"</span>, <span class="at">label =</span> <span class="st">"Dataset"</span>, <span class="at">choices =</span> <span class="fu">ls</span>(<span class="st">"package:datasets"</span>)),</span>
+<span id="cb5-3"><a></a>  <span class="fu">verbatimTextOutput</span>(<span class="st">"summary"</span>),</span>
+<span id="cb5-4"><a></a>  <span class="fu">tableOutput</span>(<span class="st">"table"</span>)</span>
+<span id="cb5-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Execute o applicativo e veja o resultado</li>
+<li>Faça o mesmo com o objeto <span class="meta-el"><code>server</code></span></li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb6-2"><a></a>  output<span class="sc">$</span>summary <span class="ot">&lt;-</span> <span class="fu">renderPrint</span>({</span>
+<span id="cb6-3"><a></a>    dataset <span class="ot">&lt;-</span> <span class="fu">get</span>(input<span class="sc">$</span>dataset, <span class="st">"package:datasets"</span>)</span>
+<span id="cb6-4"><a></a>    <span class="fu">summary</span>(dataset)</span>
+<span id="cb6-5"><a></a>  })</span>
+<span id="cb6-6"><a></a>  </span>
+<span id="cb6-7"><a></a>  output<span class="sc">$</span>table <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
+<span id="cb6-8"><a></a>    dataset <span class="ot">&lt;-</span> <span class="fu">get</span>(input<span class="sc">$</span>dataset, <span class="st">"package:datasets"</span>)</span>
+<span id="cb6-9"><a></a>    dataset</span>
+<span id="cb6-10"><a></a>  })</span>
+<span id="cb6-11"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Execute o applicativo novamente e veja o resultado</li>
+<li>Salve o script R com o nome <span class="meta-el"><code>app.R</code></span></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_46fe61a9" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="section-3" class="title-slide slide level1 center" data-background-image="images/img-first-app.webp" data-background-size="contain">
+<h1></h1>
+
+</section>
+<section id="sua-vez---explicado" class="slide level2 your-turn" style="font-size: .5em">
+<h2>Sua vez - Explicado</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="sourceCode" id="cb7" data-code-line-numbers="2|3|4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb7-2"><a></a>  <span class="fu">selectInput</span>(<span class="st">"dataset"</span>, <span class="at">label =</span> <span class="st">"Dataset"</span>, <span class="at">choices =</span> <span class="fu">ls</span>(<span class="st">"package:datasets"</span>)),</span>
+<span id="cb7-3"><a></a>  <span class="fu">verbatimTextOutput</span>(<span class="st">"summary"</span>),</span>
+<span id="cb7-4"><a></a>  <span class="fu">tableOutput</span>(<span class="st">"table"</span>)</span>
+<span id="cb7-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>fluidPage()</code> é uma função de layout que estabelece uma estrutura visual básica da página.</li>
+<li><code>selectInput()</code> é um controle de entrada (<em>input</em>) que permite ao usuário interagir com o aplicativo fornecendo um valor. Neste caso, é uma caixa de seleção com o <em>label</em> “Conjunto de Dados” e permite escolher um dos conjuntos de dados integrados que acompanham o R.</li>
+<li><code>verbatimTextOutput()</code> e <code>tableOutput()</code> são controles de saída (<em>output</em>) que indicam ao Shiny onde colocar a saída renderizada (entraremos em como fazer isso em um momento). verbatimTextOutput() exibe código e tableOutput() exibe tabelas.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb8" data-code-line-numbers="2|7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output, session) {</span>
+<span id="cb8-2"><a></a>  output<span class="sc">$</span>summary <span class="ot">&lt;-</span> <span class="fu">renderPrint</span>({</span>
+<span id="cb8-3"><a></a>    dataset <span class="ot">&lt;-</span> <span class="fu">get</span>(input<span class="sc">$</span>dataset, <span class="st">"package:datasets"</span>)</span>
+<span id="cb8-4"><a></a>    <span class="fu">summary</span>(dataset)</span>
+<span id="cb8-5"><a></a>  })</span>
+<span id="cb8-6"><a></a>  </span>
+<span id="cb8-7"><a></a>  output<span class="sc">$</span>table <span class="ot">&lt;-</span> <span class="fu">renderTable</span>({</span>
+<span id="cb8-8"><a></a>    dataset <span class="ot">&lt;-</span> <span class="fu">get</span>(input<span class="sc">$</span>dataset, <span class="st">"package:datasets"</span>)</span>
+<span id="cb8-9"><a></a>    dataset</span>
+<span id="cb8-10"><a></a>  })</span>
+<span id="cb8-11"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>O lado esquerdo do operador de atribuição (&lt;-), output$ID, indica que você está fornecendo a receita para a saída do Shiny com aquele ID.</p></li>
+<li><p>O lado direito da atribuição usa uma função de renderização específica para envolver algum código que você fornece.</p></li>
+<li><p>Cada função render{TIPO} é projetada para produzir um tipo específico de saída (por exemplo, texto, tabelas e gráficos), e geralmente é emparelhada com uma função {tipo}Output.</p></li>
+<li><p>Por exemplo, neste aplicativo, <span class="meta-el">renderPrint()</span> é emparelhado com <span class="meta-el">verbatimTextOutput()</span> para exibir um resumo estatístico com texto de largura fixa (verbatim), e <span class="inline-el">renderTable()</span> é emparelhado com <span class="inline-el">tableOutput()</span> para mostrar os dados de entrada em uma tabela.</p></li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="inputs-e-outputs" class="title-slide slide level1 center">
+<h1>Inputs e Outputs</h1>
+
+</section>
+<section id="entendendo-os-inputs-e-outputs" class="slide level2">
+<h2>Entendendo os <span style="color:#67BF5C;">inputs</span> e <span style="color:#ED665D;">outputs</span></h2>
+
+<img data-src="images/input-output.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="ui.r-inputs-e-outputs" class="slide level2">
+<h2>ui.R: <span style="color:#67BF5C;">inputs</span> e <span style="color:#ED665D;">outputs</span></h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb9-2"><a></a>  <span class="co"># inputs(): funções de input,</span></span>
+<span id="cb9-3"><a></a>  <span class="co"># outputs(): funções de output</span></span>
+<span id="cb9-4"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ui.r-inputs-e-outputs-1" class="slide level2">
+<h2>ui.R: <span style="color:#67BF5C;">inputs</span> e <span style="color:#ED665D;">outputs</span></h2>
+<ul>
+<li>Criando um botão de <span style="color:#67BF5C;">input</span> com uma das funções de <span style="color:#67BF5C;">inputs()</span>.</li>
+</ul>
+<div class="sourceCode" id="cb10" style="font-size: .6em"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"nume"</span>,            <span class="co"># identificador do butao (input)</span></span>
+<span id="cb10-2"><a></a>            <span class="at">label =</span> <span class="st">"Escolha um valor"</span>,  <span class="co"># texto que irá aparecer na interface</span></span>
+<span id="cb10-3"><a></a>            <span class="at">min =</span> <span class="dv">0</span>,                     <span class="co"># valor mínimo que o botão aceita</span></span>
+<span id="cb10-4"><a></a>            <span class="at">max =</span> <span class="dv">100</span>,                   <span class="co"># valor máximo que o botão aceita</span></span>
+<span id="cb10-5"><a></a>            <span class="at">value =</span> <span class="dv">50</span>,                  <span class="co"># valor padrão inicial</span></span>
+<span id="cb10-6"><a></a>            <span class="at">step =</span> <span class="dv">1</span>)                    <span class="co"># intervalo entre cada valor</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<ul>
+<li>Botão em HTML</li>
+</ul>
+<div class="sourceCode" id="cb11" style="font-size: .6em"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"form-group shiny-input-container"</span><span class="dt">&gt;</span></span>
+<span id="cb11-2"><a></a>  <span class="dt">&lt;</span><span class="kw">label</span><span class="ot"> class</span><span class="op">=</span><span class="st">"control-label"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"nume-label"</span><span class="ot"> for</span><span class="op">=</span><span class="st">"nume"</span><span class="dt">&gt;</span>Escolha um valor<span class="dt">&lt;/</span><span class="kw">label</span><span class="dt">&gt;</span></span>
+<span id="cb11-3"><a></a>  <span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> class</span><span class="op">=</span><span class="st">"js-range-slider"</span><span class="ot"> id</span><span class="op">=</span><span class="st">"nume"</span><span class="ot"> data-skin</span><span class="op">=</span><span class="st">"shiny"</span><span class="ot"> data-min</span><span class="op">=</span><span class="st">"0"</span><span class="ot"> data-max</span><span class="op">=</span><span class="st">"100"</span><span class="ot"> data-from</span><span class="op">=</span><span class="st">"50"</span><span class="ot"> data-step</span><span class="op">=</span><span class="st">"1"</span><span class="ot"> data-grid</span><span class="op">=</span><span class="st">"true"</span><span class="ot"> data-grid-num</span><span class="op">=</span><span class="st">"10"</span><span class="ot"> data-grid-snap</span><span class="op">=</span><span class="st">"false"</span><span class="ot"> data-prettify-separator</span><span class="op">=</span><span class="st">","</span><span class="ot"> data-prettify-enabled</span><span class="op">=</span><span class="st">"true"</span><span class="ot"> data-keyboard</span><span class="op">=</span><span class="st">"true"</span><span class="ot"> data-data-type</span><span class="op">=</span><span class="st">"number"</span><span class="dt">/&gt;</span></span>
+<span id="cb11-4"><a></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="ui.r-inputs-e-outputs-2" class="slide level2">
+<h2>ui.R: <span style="color:#67BF5C;">inputs</span> e <span style="color:#ED665D;">outputs</span></h2>
+<div class="columns">
+<div class="column" style="font-size: .65em">
+<p><br>
+<br>
+<br>
+</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb12-2"><a></a></span>
+<span id="cb12-3"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb12-4"><a></a></span>
+<span id="cb12-5"><a></a>  </span>
+<span id="cb12-6"><a></a>  </span>
+<span id="cb12-7"><a></a>)</span>
+<span id="cb12-8"><a></a></span>
+<span id="cb12-9"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
+<span id="cb12-10"><a></a></span>
+<span id="cb12-11"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/shiny-template01.png" class="quarto-figure quarto-figure-center" height="800"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ui.r-inputs-e-outputs-3" class="slide level2">
+<h2>ui.R: <span style="color:#67BF5C;">inputs</span> e <span style="color:#ED665D;">outputs</span></h2>
+<div class="columns">
+<div class="column" style="font-size: .65em">
+<p><br>
+<br>
+<br>
+</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb13-2"><a></a></span>
+<span id="cb13-3"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb13-4"><a></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"num"</span>, </span>
+<span id="cb13-5"><a></a>    <span class="at">label =</span> <span class="st">"Escolha um valor"</span>, </span>
+<span id="cb13-6"><a></a>    <span class="at">value =</span> <span class="dv">25</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">100</span>)</span>
+<span id="cb13-7"><a></a>)</span>
+<span id="cb13-8"><a></a></span>
+<span id="cb13-9"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
+<span id="cb13-10"><a></a></span>
+<span id="cb13-11"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/shiny-template02.png" class="quarto-figure quarto-figure-center" height="800"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ui.r-inputs" class="slide level2">
+<h2>ui.R: <span style="color:#67BF5C;">inputs</span></h2>
+
+<img data-src="images/botoes-input.png" class="quarto-figure quarto-figure-center r-stretch" width="800"></section>
+<section id="sua-vez-1" class="slide level2 your-turn">
+<h2>Sua vez</h2>
+<ol type="1">
+<li><p>Abra o arquivo <code>suavez-02.R</code></p></li>
+<li><p>Adicione os seguintes botões:</p></li>
+</ol>
+<div class="callout callout-note no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Botões</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>radio button</li>
+<li>check button</li>
+<li>text input</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Configure o <code>inputId</code>, <code>label</code>, <code>choices</code>, <code>selected</code></li>
+<li>Veja também <code>choiceNames</code> e <code>choiceValues</code></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_74fb9141" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="ui.r-outputs" class="slide level2" style="font-size: .65em">
+<h2>ui.R: <span style="color:#ED665D;">outputs</span></h2>
+<ul>
+<li>As funções abaixo tem como objetivo informar ao front-end qual o tipo de objeto será renderizado.<br>
+<br>
+<br>
+</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Funções <code>output</code></th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dataTableOutput()</code></td>
+<td>Tabela interativa</td>
+</tr>
+<tr class="even">
+<td><code>htmlOutput()</code></td>
+<td>HTML bruto</td>
+</tr>
+<tr class="odd">
+<td><code>imageOutput()</code></td>
+<td>Imagem (png, jpg, …)</td>
+</tr>
+<tr class="even">
+<td><code>plotOutput()</code></td>
+<td>Gráfico R</td>
+</tr>
+<tr class="odd">
+<td><code>tableOutput()</code></td>
+<td>Tabela (dataframe)</td>
+</tr>
+<tr class="even">
+<td><code>textOutput()</code></td>
+<td>Texto</td>
+</tr>
+<tr class="odd">
+<td><code>uiOutput()</code></td>
+<td>Botão/interface Shiny</td>
+</tr>
+<tr class="even">
+<td><code>verbatimTextOutput()</code></td>
+<td>Texto (código)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ui.r-outputs-1" class="slide level2" style="font-size: .65em">
+<h2>ui.R: <span style="color:#ED665D;">outputs</span></h2>
+<ul>
+<li>Para apresentar um objeto do tipo output, basta adicioná-lo ao <code>fluidPage()</code> com uma função do tipo <code>*output()</code>.</li>
+</ul>
+
+<img data-src="images/output02.png" class="quarto-figure quarto-figure-center r-stretch" width="800"></section>
+<section id="ui.r-outputs-2" class="slide level2" style="font-size: .65em">
+<h2>ui.R: <span style="color:#ED665D;">outputs</span></h2>
+<ul>
+<li>Para apresentar um objeto do tipo output, basta adicioná-lo ao <code>fluidPage()</code> com uma função do tipo <code>*output()</code>.</li>
+</ul>
+
+<img data-src="images/output01.png" class="quarto-figure quarto-figure-center r-stretch" width="800"></section>
+<section id="ui.r-outputs-3" class="slide level2" style="font-size: .65em">
+<h2>ui.R: <span style="color:#ED665D;">outputs</span></h2>
+<div class="columns">
+<div class="column" style="font-size: .75em">
+<p><br>
+<br>
+<br>
+</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb14-2"><a></a></span>
+<span id="cb14-3"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb14-4"><a></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"num"</span>, </span>
+<span id="cb14-5"><a></a>    <span class="at">label =</span> <span class="st">"Escolha um valor"</span>, </span>
+<span id="cb14-6"><a></a>    <span class="at">value =</span> <span class="dv">25</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">100</span>),</span>
+<span id="cb14-7"><a></a>  <span class="fu">plotOutput</span>(<span class="st">"hist"</span>)</span>
+<span id="cb14-8"><a></a>)</span>
+<span id="cb14-9"><a></a></span>
+<span id="cb14-10"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
+<span id="cb14-11"><a></a></span>
+<span id="cb14-12"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="font-size: .65em">
+<div class="r-stack">
+<div class="fragment fade-in-then-out">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/output03.png" class="quarto-figure quarto-figure-center" height="800"></p>
+</figure>
+</div>
+</div>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/output04.png" class="quarto-figure quarto-figure-center" height="800"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="server-side" class="title-slide slide level1 center">
+<h1>Server side</h1>
+
+</section>
+<section id="server-regra-i" class="slide level2">
+<h2>Server: regra I</h2>
+<ul>
+<li>Salvar o objeto a ser apresentado na <span class="meta-el">UI</span> em <span class="meta-el">output$&lt;ID&gt;</span>.</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb15-2"><a></a>  output<span class="sc">$</span>hist <span class="ot">&lt;-</span> <span class="st">'código'</span></span>
+<span id="cb15-3"><a></a>    </span>
+<span id="cb15-4"><a></a>    </span>
+<span id="cb15-5"><a></a>    </span>
+<span id="cb15-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="server-regra-ii" class="slide level2">
+<h2>Server: regra II</h2>
+<ul>
+<li><p>Criar os objetos a serem apresentados com as funções .</p></li>
+<li><p><em>Atenção:</em> essa função <span class="inline-el">render***()</span> deve estar de acordo com a função de <span class="inline-el">***Output</span> presente no objeto <code>ui</code>.</p></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb16-2"><a></a>  output<span class="sc">$</span>hist <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb16-3"><a></a>    </span>
+<span id="cb16-4"><a></a>  </span>
+<span id="cb16-5"><a></a>    </span>
+<span id="cb16-6"><a></a>  })</span>
+<span id="cb16-7"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="server-funções-render" class="slide level2">
+<h2>Server: funções <code>render</code></h2>
+<ul>
+<li><ul>
+<li>Usamos as funções <span class="meta-el">render***()</span> para criar o tipo de output que desejamos fazer.</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Funções.render…</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">renderDataTable()</td>
+<td style="text-align: left;">Tabela interativa</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">renderImage()</td>
+<td style="text-align: left;">Imagem (png, jpg, …)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">renderPlot()</td>
+<td style="text-align: left;">plot - gráfico R</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">renderPrint()</td>
+<td style="text-align: left;">Texto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">renderTable()</td>
+<td style="text-align: left;">Tabela (dataframe)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">renderText()</td>
+<td style="text-align: left;">Texto (código)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">renderUI()</td>
+<td style="text-align: left;">Botão Shiny</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="server-regra-ii-1" class="slide level2">
+<h2>Server: regra II</h2>
+<ul>
+<li>Incluindo a função <code>hist()</code> para criar um histograma e então salvar no objeto <span class="meta-el">output$&lt;ID&gt;</span>.</li>
+</ul>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb17-2"><a></a>  output<span class="sc">$</span>hist <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb17-3"><a></a>    titulo <span class="ot">&lt;-</span> <span class="st">"100 valores simulados"</span></span>
+<span id="cb17-4"><a></a>    <span class="fu">hist</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> titulo)</span>
+<span id="cb17-5"><a></a>  })</span>
+<span id="cb17-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="server-regra-iii" class="slide level2">
+<h2>Server: regra III</h2>
+<ul>
+<li>Acessar os valores no objeto <span style="color:#67BF5C;">inputs</span> com <span style="color:#67BF5C;">input$</span>.</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb18-2"><a></a>  output<span class="sc">$</span>hist <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb18-3"><a></a>    titulo <span class="ot">&lt;-</span> <span class="st">"100 valores simulados"</span></span>
+<span id="cb18-4"><a></a>    <span class="fu">hist</span>(<span class="at">x =</span> <span class="fu">rnorm</span>(input<span class="sc">$</span>num), <span class="at">main =</span> titulo)</span>
+<span id="cb18-5"><a></a>  })</span>
+<span id="cb18-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="server-regra-iii-1" class="slide level2">
+<h2>Server: regra III</h2>
+<ul>
+<li>Acessar os valores no objeto <span style="color:#67BF5C;">inputs</span> com <span style="color:#67BF5C;">input$</span>.</li>
+</ul>
+
+<img data-src="images/server-input.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="nossa-vez" class="slide level2 our-turn">
+<h2>Nossa vez</h2>
+<div class="columns">
+<div class="column" style="font-size: .65em">
+<p><br>
+<br>
+<br>
+</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb19-2"><a></a></span>
+<span id="cb19-3"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb19-4"><a></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"num"</span>, </span>
+<span id="cb19-5"><a></a>    <span class="at">label =</span> <span class="st">"Escolha um valor"</span>, </span>
+<span id="cb19-6"><a></a>    <span class="at">value =</span> <span class="dv">25</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">100</span>),</span>
+<span id="cb19-7"><a></a>  <span class="fu">plotOutput</span>(<span class="st">"hist"</span>)</span>
+<span id="cb19-8"><a></a>)</span>
+<span id="cb19-9"><a></a></span>
+<span id="cb19-10"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb19-11"><a></a>  output<span class="sc">$</span>hist <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb19-12"><a></a>    <span class="fu">hist</span>(<span class="fu">rnorm</span>(input<span class="sc">$</span>num))</span>
+<span id="cb19-13"><a></a>  })</span>
+<span id="cb19-14"><a></a>}</span>
+<span id="cb19-15"><a></a></span>
+<span id="cb19-16"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hist-app.png" class="quarto-figure quarto-figure-center" height="800"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sua-vez-2" class="slide level2 your-turn" style="font-size: .6em">
+<h2>Sua vez</h2>
+<p>Abra o arquivo <code>02-hist-app.R</code> no RStudio e…</p>
+<ul>
+<li>Modifique o app de forma que o título do aplicativo informe o número de valores que estão sendo simulados.</li>
+<li>Customize a cor do histograma, os rótulos dos eixos x e y, tamanho da fonte.</li>
+<li>Permita valores ente <span class="math inline">\(1\)</span> e <span class="math inline">\(1000\)</span> e que seja atualizado ao passo de <span class="math inline">\(25\)</span> unidades.</li>
+<li>Crie mais dois botões para modificar a média e o desvio-padrão da distribuição normal.</li>
+<li>Adicione um botão para selecionar a cor do histograma: preto, cinza, branco e azul.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_6da12831" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="layout-da-ui" class="title-slide slide level1 center">
+<h1>Layout da UI</h1>
+
+</section>
+<section id="layout-da-ui-1" class="slide level2">
+<h2>Layout da UI</h2>
+<ul>
+<li>Existem diversas funções para estabelecer um layout para o aplicativo.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/layout.png" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+</section>
+<section id="panel-abas" class="slide level2">
+<h2>Panel (Abas)</h2>
+<ul>
+<li>Podemos também criar abas nos aplicativos.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/panel.png" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+</section>
+<section id="exemplo-01---sidebarmainpanel-layout" class="slide level2">
+<h2>Exemplo 01 - Sidebar/Mainpanel layout</h2>
+<div class="columns">
+<div class="column" style="font-size: .65em">
+<p><br>
+<br>
+<br>
+</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb20-2"><a></a></span>
+<span id="cb20-3"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb20-4"><a></a>  <span class="fu">titlePanel</span>(<span class="at">title =</span> <span class="st">"Título do meu app"</span>),</span>
+<span id="cb20-5"><a></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb20-6"><a></a>    <span class="fu">sidebarPanel</span>(<span class="st">"sidebarPanel"</span>),</span>
+<span id="cb20-7"><a></a>    <span class="fu">mainPanel</span>(<span class="st">"mainPanel"</span>)</span>
+<span id="cb20-8"><a></a>    )</span>
+<span id="cb20-9"><a></a>  )</span>
+<span id="cb20-10"><a></a></span>
+<span id="cb20-11"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {}</span>
+<span id="cb20-12"><a></a></span>
+<span id="cb20-13"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ex-app01.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplo-02---sidebarmainpanel-layout" class="slide level2" style="font-size: .65em">
+<h2>Exemplo 02 - Sidebar/Mainpanel layout</h2>
+<ul>
+<li>Criar um aplicativo simples com um dos valores simulados da distribuição normal no . Botão para escolher o número de valores a serem simulados no .</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ex-app02.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+</section>
+<section id="exemplo-02---ui" class="slide level2" style="font-size: .65em">
+<h2>Exemplo 02 - ui</h2>
+<div class="columns">
+<div class="column" style="font-size: .65em">
+<p><br>
+<br>
+<br>
+</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb21-2"><a></a></span>
+<span id="cb21-3"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb21-4"><a></a>  <span class="fu">titlePanel</span>(<span class="at">title =</span> <span class="st">"Título do meu app 2"</span>),</span>
+<span id="cb21-5"><a></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb21-6"><a></a>    <span class="fu">sidebarPanel</span>(</span>
+<span id="cb21-7"><a></a>      <span class="fu">numericInput</span>(</span>
+<span id="cb21-8"><a></a>        <span class="at">inputId =</span> <span class="st">"n_amostra"</span>, </span>
+<span id="cb21-9"><a></a>        <span class="at">label =</span> <span class="st">"Tamanho Amostral"</span>, </span>
+<span id="cb21-10"><a></a>        <span class="at">value =</span> <span class="dv">20</span>, </span>
+<span id="cb21-11"><a></a>        <span class="at">min =</span> <span class="dv">1</span>)</span>
+<span id="cb21-12"><a></a>    ),</span>
+<span id="cb21-13"><a></a>    <span class="fu">mainPanel</span>(</span>
+<span id="cb21-14"><a></a>      <span class="fu">plotOutput</span>(<span class="st">"box"</span>)</span>
+<span id="cb21-15"><a></a>    )</span>
+<span id="cb21-16"><a></a>  )</span>
+<span id="cb21-17"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ex-app02.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplo-02---server" class="slide level2" style="font-size: .65em">
+<h2>Exemplo 02 - server</h2>
+<div class="columns">
+<div class="column" style="font-size: .65em">
+<p><br>
+<br>
+<br>
+</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb22-2"><a></a>  output<span class="sc">$</span>box <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb22-3"><a></a>    amostra <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> input<span class="sc">$</span>n_amostra)</span>
+<span id="cb22-4"><a></a>    <span class="fu">boxplot</span>(</span>
+<span id="cb22-5"><a></a>      <span class="at">x =</span> amostra, </span>
+<span id="cb22-6"><a></a>      <span class="at">col =</span> <span class="st">"steelblue"</span>, </span>
+<span id="cb22-7"><a></a>      <span class="at">main =</span> <span class="st">"Boxplot"</span>,</span>
+<span id="cb22-8"><a></a>      <span class="at">xlab =</span> <span class="st">"Dados"</span>)</span>
+<span id="cb22-9"><a></a>  })</span>
+<span id="cb22-10"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ex-app02.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sua-vez-3" class="slide level2 your-turn" style="font-size: .6em">
+<h2>Sua vez</h2>
+<p>Abra o arquivo <code>03-boxplot.R</code> no RStudio e adicione funcionalidades:</p>
+<ol type="1">
+<li>Título customizável</li>
+<li>Alterar a cor do boxplot com um radioButton() no sidebarPanel.</li>
+<li>O usuário tem que ser ápito a alterar a média, desvio e tomanho da amostra</li>
+<li>Adicionar 5 estatísticas da sua preferência.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_27db80bd" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="função-reactive" class="title-slide slide level1 center">
+<h1>Função <code>reactive</code></h1>
+
+</section>
+<section id="função-reactive-1" class="slide level2">
+<h2>Função reactive()</h2>
+<ul>
+<li>Função (de inputs) para ser utilizada em várias partes do aplicativo de forma a otimizar e organizar a aplicação.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/reactive.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+</section>
+<section id="função-reactive-2" class="slide level2">
+<h2>Função reactive()</h2>
+<div class="sourceCode" id="cb23" style="font-size: .6em" data-code-line-numbers="12|13|14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">library</span>(shiny)</span>
+<span id="cb23-2"><a></a></span>
+<span id="cb23-3"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb23-4"><a></a>  <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"num"</span>, </span>
+<span id="cb23-5"><a></a>    <span class="at">label =</span> <span class="st">"Tamanho amostral"</span>, </span>
+<span id="cb23-6"><a></a>    <span class="at">value =</span> <span class="dv">25</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">100</span>),</span>
+<span id="cb23-7"><a></a>  <span class="fu">plotOutput</span>(<span class="st">"hist"</span>),</span>
+<span id="cb23-8"><a></a>  <span class="fu">verbatimTextOutput</span>(<span class="st">"stats"</span>)</span>
+<span id="cb23-9"><a></a>)</span>
+<span id="cb23-10"><a></a></span>
+<span id="cb23-11"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb23-12"><a></a>  data <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
+<span id="cb23-13"><a></a>    <span class="fu">rnorm</span>(input<span class="sc">$</span>num)</span>
+<span id="cb23-14"><a></a>  })</span>
+<span id="cb23-15"><a></a>  output<span class="sc">$</span>hist <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb23-16"><a></a>    <span class="fu">hist</span>(<span class="fu">data</span>())</span>
+<span id="cb23-17"><a></a>  })</span>
+<span id="cb23-18"><a></a>  output<span class="sc">$</span>stats <span class="ot">&lt;-</span> <span class="fu">renderPrint</span>({</span>
+<span id="cb23-19"><a></a>    <span class="fu">summary</span>(<span class="fu">data</span>())</span>
+<span id="cb23-20"><a></a>  })</span>
+<span id="cb23-21"><a></a>}</span>
+<span id="cb23-22"><a></a></span>
+<span id="cb23-23"><a></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exemplo---reactive" class="slide level2">
+<h2>Exemplo - Reactive</h2>
+<ul>
+<li>Criar um aplicativo para clusterizar a base de dados iris usando algoritmo de K-means.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/k-means.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+</section>
+<section id="exemplo---reactive---ui" class="slide level2">
+<h2>Exemplo - Reactive - ui</h2>
+<div class="sourceCode" id="cb24" style="font-size: .6em"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">fluidPage</span>(</span>
+<span id="cb24-2"><a></a>  <span class="fu">headerPanel</span>(<span class="st">'Iris k-means clustering'</span>),</span>
+<span id="cb24-3"><a></a>  <span class="fu">sidebarPanel</span>(</span>
+<span id="cb24-4"><a></a>    <span class="fu">selectInput</span>(<span class="st">'xcol'</span>, <span class="st">'Variável X'</span>, <span class="fu">names</span>(iris)),</span>
+<span id="cb24-5"><a></a>    <span class="fu">selectInput</span>(<span class="st">'ycol'</span>, <span class="st">'Variável Y'</span>, <span class="fu">names</span>(iris),</span>
+<span id="cb24-6"><a></a>      <span class="at">selected =</span> <span class="fu">names</span>(iris)[<span class="dv">2</span>]),</span>
+<span id="cb24-7"><a></a>    <span class="fu">numericInput</span>(<span class="st">'clusters'</span>, <span class="st">'Número de Clusters'</span>, <span class="dv">3</span>,</span>
+<span id="cb24-8"><a></a>      <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">9</span>)</span>
+<span id="cb24-9"><a></a>  ),</span>
+<span id="cb24-10"><a></a>  <span class="fu">mainPanel</span>(</span>
+<span id="cb24-11"><a></a>    <span class="fu">plotOutput</span>(<span class="st">'plot1'</span>)</span>
+<span id="cb24-12"><a></a>  )</span>
+<span id="cb24-13"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exemplo---reactive---server" class="slide level2">
+<h2>Exemplo - Reactive - server</h2>
+<div class="sourceCode" id="cb25" style="font-size: .6em"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb25-2"><a></a></span>
+<span id="cb25-3"><a></a>  selectedData <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
+<span id="cb25-4"><a></a>    iris[, <span class="fu">c</span>(input<span class="sc">$</span>xcol, input<span class="sc">$</span>ycol)]</span>
+<span id="cb25-5"><a></a>  })</span>
+<span id="cb25-6"><a></a></span>
+<span id="cb25-7"><a></a>  clusters <span class="ot">&lt;-</span> <span class="fu">reactive</span>({</span>
+<span id="cb25-8"><a></a>    <span class="fu">kmeans</span>(<span class="fu">selectedData</span>(), input<span class="sc">$</span>clusters)</span>
+<span id="cb25-9"><a></a>  })</span>
+<span id="cb25-10"><a></a></span>
+<span id="cb25-11"><a></a>  output<span class="sc">$</span>plot1 <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb25-12"><a></a>    <span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="fl">5.1</span>, <span class="fl">4.1</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb25-13"><a></a>    <span class="fu">plot</span>(<span class="fu">selectedData</span>(),</span>
+<span id="cb25-14"><a></a>         <span class="at">col =</span> <span class="fu">clusters</span>()<span class="sc">$</span>cluster,</span>
+<span id="cb25-15"><a></a>         <span class="at">pch =</span> <span class="dv">20</span>, <span class="at">cex =</span> <span class="dv">3</span>)</span>
+<span id="cb25-16"><a></a>    <span class="fu">points</span>(<span class="fu">clusters</span>()<span class="sc">$</span>centers, <span class="at">pch =</span> <span class="dv">4</span>, <span class="at">cex =</span> <span class="dv">4</span>, <span class="at">lwd =</span> <span class="dv">4</span>)</span>
+<span id="cb25-17"><a></a>  })</span>
+<span id="cb25-18"><a></a></span>
+<span id="cb25-19"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sua-vez-4" class="slide level2 your-turn" style="font-size: .6em">
+<h2>Sua vez</h2>
+<div class="task">
+<ul>
+<li>Criar um aplicativo para gerar das seguintes distribuições de probabilidade:
+<ul>
+<li>Normal</li>
+<li>Exponencial</li>
+</ul></li>
+<li>Gerar um histograma <span class="inline-el">bonito</span> dos valores.</li>
+<li>Opção para selecionar a distribuição de probabilidade.</li>
+<li>Opção para o número de valores simulados.</li>
+</ul>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/dist-app.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_c5c8d0ab" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="lista-de-exercícios" class="slide level2 your-turn" style="font-size: .6em">
+<h2>Lista de Exercícios</h2>
+<div class="task">
+<ul>
+<li>Aplicativo para analisar a base de dados .
+<ul>
+<li>Apresentar os dados usando a função do pacote DT.</li>
+<li>Botão para selecionar qual estatística será calculada.</li>
+<li>Botão para selecionar em qual variável será aplicada o cálculo.</li>
+<li>Botão para indicar se a estatísitca é pela variável “Species”. Dica: ?dplyr::group_by</li>
+<li>Apresentar a estatística calculada. Dica: ?verbatimTextOutput</li>
+</ul></li>
+<li>Modifique o aplicativo <code>02-hist-app.R</code>
+<ul>
+<li>Adicione uma saída com estatística de média e desvio amostral</li>
+<li>Utiliza a função reactive para gerar o histograma e saída resumo do item anterior</li>
+</ul></li>
+</ul>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_98ea75a3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">15</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section></section>
+<section id="perguntas" class="title-slide slide level1 center">
+<h1>Perguntas?</h1>
+
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+<p><a href="index.html">Shiny 101</a></p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: false,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var logo = document.querySelector('.slide-logo');
+        var url = 'https://stat20.org';
+        logo.addEventListener('click', function() {
+          window.open(url, '_blank');
+        });
+      });
+      Reveal.on('ready', event => {
+        if (event.indexh === 0) {
+          document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
+        }
+      });
+      Reveal.addEventListener('slidechanged', (event) => {
+        if (event.indexh === 0) {
+          Reveal.configure({ slideNumber: null });
+          document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
+        }
+        if (event.indexh === 1) { 
+          Reveal.configure({ slideNumber: 'c' });
+          document.querySelector("div.has-logo > img.slide-logo").style.display = null;
+        }
+      });
+    </script>
+    
+
+</body></html>
